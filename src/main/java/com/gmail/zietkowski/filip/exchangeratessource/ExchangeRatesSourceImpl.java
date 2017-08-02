@@ -36,14 +36,26 @@ public class ExchangeRatesSourceImpl implements ExchangeRatesSource {
                           BigDecimal.valueOf(0.28)));
         exchangeRates.add(new ExchangeRate(Currency.PLN, Currency.EUR,
                           BigDecimal.valueOf(0.23)));
+        exchangeRates.add(new ExchangeRate(Currency.PLN, Currency.GBP,
+                          BigDecimal.valueOf(0.21)));
         exchangeRates.add(new ExchangeRate(Currency.USD, Currency.PLN,
                           BigDecimal.valueOf(3.60)));
         exchangeRates.add(new ExchangeRate(Currency.USD, Currency.EUR,
                           BigDecimal.valueOf(0.85)));
+        exchangeRates.add(new ExchangeRate(Currency.USD, Currency.GBP,
+                          BigDecimal.valueOf(0.76)));
         exchangeRates.add(new ExchangeRate(Currency.EUR, Currency.PLN,
                           BigDecimal.valueOf(4.26)));
-        exchangeRates.add(new ExchangeRate(Currency.EUR, Currency.EUR,
+        exchangeRates.add(new ExchangeRate(Currency.EUR, Currency.USD,
                           BigDecimal.valueOf(1.18)));
+        exchangeRates.add(new ExchangeRate(Currency.EUR, Currency.GBP,
+                          BigDecimal.valueOf(0.89)));
+        exchangeRates.add(new ExchangeRate(Currency.GBP, Currency.PLN,
+                          BigDecimal.valueOf(4.75)));
+        exchangeRates.add(new ExchangeRate(Currency.GBP, Currency.USD,
+                          BigDecimal.valueOf(1.32)));
+        exchangeRates.add(new ExchangeRate(Currency.GBP, Currency.EUR,
+                          BigDecimal.valueOf(1.12)));
         
         System.out.println("\n#### Exchange rates source initialized. ####\n");
     }
