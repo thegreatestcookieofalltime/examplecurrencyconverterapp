@@ -81,10 +81,20 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
         
         BigDecimal amount;
         
-        System.out.println("\n#### Welcome to a currency converter app. ####\n"
-                           + "\nThis app handles the following conversions:\n"
+        System.out.println("\n#### Welcome to Example Currencies Converter."
+                           + " ####\n\nPlease, read the LICENSE.txt file before"
+                           + " using it. You are allowed to use this"
+                           + " application only if you accept its license"
+                           + " (provided in that file).\n\nThis application"
+                           + " handles the following conversions:\n"
                            + exchangeRatesSource.getAvailableExchangeRates()
-                           + "\nPlease, type the source currency:");
+                           + "\n\nPlease, be aware that the exchange rates "
+                           + "used by this application are fake and so are the"
+                           + " conversion results.\nIt's only an example"
+                           + " application to demonstrate usage of the Spring "
+                           + "Framework and therefore shouldn't be used for any"
+                           + " financial calculations.\n\nPlease, type the"
+                           + " source currency:");
         Scanner scanner = new Scanner(System.in);
         sourceCurrency = scanner.next();
         System.out.println("Please, type the target currency:");
