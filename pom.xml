@@ -6,12 +6,37 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmail.zietkowski.filip</groupId>
-    <artifactId>converter</artifactId>
+    <artifactId>currencies-converter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
-    </parent>
+    <packaging>pom</packaging>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>1.5.6.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.6.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    
+    <modules>
+        <module>converter</module>
+        <module>exchange-rates-source</module>
+    </modules>
 </project>
