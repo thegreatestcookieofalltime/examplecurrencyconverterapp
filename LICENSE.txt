@@ -1,6 +1,12 @@
-This application was developed by Filip Ziętkowski. The licenses of libraries
-that it uses, can be found in the "licenses" directory. The application itself
-is licensed under the following conditions:
+This application was developed by Filip Ziętkowski.
+
+Please, be aware that the exchange rates used by this application 
+are fake and so are the conversion results.
+It's only an example application to demonstrate 
+usage of the Spring Framework and therefore shouldn't 
+be used for any financial calculations.
+
+The application is licensed under the following conditions:
 
 Copyright (c) 2017, Filip Ziętkowski
 All rights reserved.
