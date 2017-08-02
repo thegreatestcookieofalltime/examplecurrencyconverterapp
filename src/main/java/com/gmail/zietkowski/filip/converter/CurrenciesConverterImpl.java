@@ -97,13 +97,13 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
                            + " source currency:");
         Scanner scanner = new Scanner(System.in);
         sourceCurrency = scanner.next();
-        System.out.println("Please, type the target currency:");
-        targetCurrency = scanner.next();
         System.out.println("Please, type the amount to convert:");
         while (!scanner.hasNextBigDecimal()) {
             scanner.next();
         }
         amount = scanner.nextBigDecimal();
+        System.out.println("Please, type the target currency:");
+        targetCurrency = scanner.next();
         
         try {
             System.out.println("The given amount of source currency equals "
