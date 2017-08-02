@@ -61,7 +61,7 @@ public class CurrenciesConverterTest {
      * Test of the convertCurrency method when given the proper input values.
      */
     @Test
-    public void properValuesShouldGiveProperConversionResultsTest() {
+    public void properValuesShouldGiveProperConvertCurrencyResultsTest() {
         BigDecimal result;
         
         try {
@@ -98,7 +98,7 @@ public class CurrenciesConverterTest {
      * method.
      */
     @Test
-    public void improperValuesShouldGiveImproperConversionResultsTest()
+    public void improperValuesShouldGiveImproperConvertCurrencyResultsTest()
                 throws UnknownCurrencyException {
         int catchedExceptions = 0;
         

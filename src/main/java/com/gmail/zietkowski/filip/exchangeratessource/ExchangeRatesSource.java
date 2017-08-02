@@ -14,7 +14,7 @@ public interface ExchangeRatesSource {
      * 
      * @return The available exchange rates.
      */
-    public String getAvailableExchangeRates();
+    public String getStringListOfAvailableExchangeRates();
     
     /**
      * The method responsible for retrieving an exchange rate.

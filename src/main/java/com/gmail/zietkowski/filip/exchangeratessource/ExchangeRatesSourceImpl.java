@@ -64,7 +64,7 @@ public class ExchangeRatesSourceImpl implements ExchangeRatesSource {
      * {@inheritDoc}
      */
     @Override
-    public String getAvailableExchangeRates() {
+    public String getStringListOfAvailableExchangeRates() {
         StringBuilder ret = new StringBuilder();
         for (ExchangeRate eR: exchangeRates) {
             ret.append(eR.getSourceCurrency());

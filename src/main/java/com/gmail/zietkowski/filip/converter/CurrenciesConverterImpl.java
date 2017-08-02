@@ -87,7 +87,8 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
                            + " application only if you accept its license"
                            + " (provided in that file).\n\nThis application"
                            + " handles the following conversions:\n"
-                           + exchangeRatesSource.getAvailableExchangeRates()
+                           + exchangeRatesSource
+                           .getStringListOfAvailableExchangeRates()
                            + "\n\nPlease, be aware that the exchange rates "
                            + "used by this application are fake and so are the"
                            + " conversion results.\nIt's only an example"
