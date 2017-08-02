@@ -27,9 +27,8 @@ public interface CurrenciesConverter {
      * 
      * @return The amount of target currency possible to get for the source one.
      * 
-     * @throws com.gmail.zietkowski.filip.exchangeratessource.exceptions.UnknownCurrencyException
-     * The exception thrown when there's no data
-     * about the chosen currency exchange rates.
+     * @throws UnknownCurrencyException The exception thrown when there's
+     * no data about the chosen currency exchange rates.
      */
     public BigDecimal convertCurrency(String sourceCurrency,
                                       String targetCurrency,
