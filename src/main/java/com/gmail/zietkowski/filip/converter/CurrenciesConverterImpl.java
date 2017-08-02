@@ -1,6 +1,7 @@
 package com.gmail.zietkowski.filip.converter;
 
-import com.gmail.zietkowski.filip.exchangeratessource.exceptions.UnknownCurrencyException;
+import com.gmail.zietkowski.filip.exchangeratessource.exceptions
+       .UnknownCurrencyException;
 import com.gmail.zietkowski.filip.exchangeratessource.ExchangeRatesSource;
 
 import java.math.BigDecimal;
@@ -54,6 +55,30 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
     }
     
     /**
+     * The currency conversion method.
+     * 
+     * @param sourceCurrency The source currency.
+     * @param targetCurrency The target currency.
+     * @param amount The amount to be converted.
+     * 
+     * @return The amount of target currency possible to get for the source one.
+     * 
+     * @throws com.gmail.zietkowski.filip.exchangeratessource.exceptions
+     * .UnknownCurrencyException The exception thrown when there's no data
+     * about the chosen currency exchange rates.
+     */
+    public BigDecimal convertCurrency(String sourceCurrency,
+                                      String targetCurrency,
+                                      BigDecimal amount)
+                      throws UnknownCurrencyException {
+        BigDecimal exchangeRate;
+        
+        exchangeRate = exchangeRatesSource.getExchangeRate(sourceCurrency,
+                                                           targetCurrency);
+        return amount.multiply(exchangeRate);
+    }
+    
+    /**
      * @inheritDoc
      */
     @Override
@@ -62,7 +87,6 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
         String targetCurrency;
         
         BigDecimal amount;
-        BigDecimal exchangeRate;
         
         System.out.println("\n#### Welcome to a currency converter app. ####\n"
                            + "\nThis app handles the following conversions:\n"
@@ -79,13 +103,10 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
         amount = scanner.nextBigDecimal();
         
         try {
-            exchangeRate = exchangeRatesSource.getExchangeRate(sourceCurrency,
-                                                               targetCurrency);
             System.out.println("The given amount of source currency equals "
-                           + amount.multiply(exchangeRate)
-                           + " in the target currency.");
-        }
-        catch (UnknownCurrencyException ex) {
+                               + convertCurrency(sourceCurrency, targetCurrency,
+                               amount) + " in the target currency.");
+        } catch (UnknownCurrencyException ex) {
             LOGGER.log(Level.SEVERE, "No data about the exchange rate of the"
                                      + " given currencies has been found.");
             // Maybe the above should just use System.err, but I guess logger
