@@ -70,21 +70,21 @@ public class CurrenciesConverterTest {
             verify(exchangeRatesSource, times(1)).getExchangeRate(
                                         ArgumentMatchers.eq("USD"),
                                         ArgumentMatchers.eq("PLN"));
-            assertEquals(result, BigDecimal.valueOf(10));
+            assertEquals(BigDecimal.valueOf(10), result);
             
             result = currenciesConverter.convertCurrency("PLN", "USD",
                                              BigDecimal.valueOf(7));
             verify(exchangeRatesSource, times(1)).getExchangeRate(
                                         ArgumentMatchers.eq("PLN"),
                                         ArgumentMatchers.eq("USD"));
-            assertEquals(result, BigDecimal.valueOf(3.5));
+            assertEquals(BigDecimal.valueOf(3.5), result);
             
             result = currenciesConverter.convertCurrency("PLN", "EUR",
                                              BigDecimal.valueOf(3));
             verify(exchangeRatesSource, times(1)).getExchangeRate(
                                         ArgumentMatchers.eq("PLN"),
                                         ArgumentMatchers.eq("EUR"));
-            assertEquals(result, BigDecimal.valueOf(0));
+            assertEquals(BigDecimal.valueOf(0), result);
         } catch(UnknownCurrencyException ex) {
             fail("No exception should be thrown when given the proper input"
                  + " values");
@@ -92,13 +92,13 @@ public class CurrenciesConverterTest {
     }
     
     /**
-     * Test of the convertCurrency method when given the improper input values.
+     * Test of the convertCurrency method when given improper input values.
      * 
      * @throws UnknownCurrencyException The exception throwed by the mocked
      * method.
      */
     @Test
-    public void improperValuesShouldGiveImproperConvertCurrencyResultsTest()
+    public void improperValuesShouldThrowAnExceptionTest()
                 throws UnknownCurrencyException {
         int catchedExceptions = 0;
         
@@ -129,7 +129,7 @@ public class CurrenciesConverterTest {
         verify(exchangeRatesSource, times(1)).getExchangeRate(
                                               ArgumentMatchers.eq("ASDF"),
                                               ArgumentMatchers.eq("FDSA"));
-        assertEquals("An exception should be thrown when given the improper"
-                     + " input values", catchedExceptions, 3);
+        assertEquals("An exception should be thrown when given improper"
+                     + " input values", 3, catchedExceptions);
     }
 }
