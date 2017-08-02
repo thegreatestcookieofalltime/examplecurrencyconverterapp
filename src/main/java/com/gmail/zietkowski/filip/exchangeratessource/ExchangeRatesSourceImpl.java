@@ -49,7 +49,7 @@ public class ExchangeRatesSourceImpl implements ExchangeRatesSource {
     }
     
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     @Override
     public String getAvailableExchangeRates() {
@@ -64,7 +64,7 @@ public class ExchangeRatesSourceImpl implements ExchangeRatesSource {
     }
     
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     @Override
     public BigDecimal getExchangeRate(String sourceCurrency,

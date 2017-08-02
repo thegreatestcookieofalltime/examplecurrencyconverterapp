@@ -34,7 +34,7 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
     ExchangeRatesSource exchangeRatesSource;
     
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     @Override
     public void setExchangeRatesSource(ExchangeRatesSource exchangeRatesSource)
@@ -55,18 +55,9 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
     }
     
     /**
-     * The currency conversion method.
-     * 
-     * @param sourceCurrency The source currency.
-     * @param targetCurrency The target currency.
-     * @param amount The amount to be converted.
-     * 
-     * @return The amount of target currency possible to get for the source one.
-     * 
-     * @throws com.gmail.zietkowski.filip.exchangeratessource.exceptions
-     * .UnknownCurrencyException The exception thrown when there's no data
-     * about the chosen currency exchange rates.
+     * {@inheritDoc}
      */
+    @Override
     public BigDecimal convertCurrency(String sourceCurrency,
                                       String targetCurrency,
                                       BigDecimal amount)
@@ -79,7 +70,7 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
     }
     
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     @Override
     public void run(String[] args) {
