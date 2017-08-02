@@ -26,7 +26,9 @@ public class CurrenciesConverterImpl implements CurrenciesConverter {
     /**
      * The logger reference.
      */
-    private static final Logger LOGGER = Logger.getLogger(CurrenciesConverterImpl.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(
+                                         CurrenciesConverterImpl.class
+                                         .getName());
     
     /**
      * The exchange rates source.
